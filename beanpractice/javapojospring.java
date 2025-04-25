@@ -1,4 +1,4 @@
-package SpringBoot_;
+package beanpractice;
 
 class Pojo {
     private String text;
