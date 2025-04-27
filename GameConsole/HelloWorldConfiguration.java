@@ -1,5 +1,6 @@
 package GameConsole;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -29,7 +30,12 @@ public class HelloWorldConfiguration { //this HelloWorldConfiguration class cont
     public Person person3Parameters(String name, int age, Address address2){ //Wiring the above beans to this bean through passing them as parameters.
         return new Person(name, age, address2);
     }
+    @Bean
+    public Person person4Parameters(String name, int age, @Qualifier("address2Qualifier") Address address) { // Autowiring a matching bean
+        return new Person(name, age, address);
+    }
     @Bean(name = "address2")
+    @Qualifier("address2Qualifier")
      public Address Address(){
         return new Address("Baker street", "Chicago");
     }

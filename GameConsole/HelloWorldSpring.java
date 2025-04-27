@@ -21,5 +21,6 @@ public class HelloWorldSpring {
         System.out.println(context.getBean(Address.class));
         // How to list all the spring or pojo beans that we created
         Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
+        System.out.println(context.getBean("person4Parameters"));
     }
 }
