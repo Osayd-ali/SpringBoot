@@ -2,6 +2,7 @@ package GameConsole;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 //Configure the things that we want spring to manage.
 
 record Person(String name, int age, Address address){}
@@ -32,5 +33,11 @@ public class HelloWorldConfiguration { //this HelloWorldConfiguration class cont
      public Address Address(){
         return new Address("Baker street", "Chicago");
     }
+    @Bean(name = "address3")
+    @Primary // This is to set this particular bean as primary, as there are two matching beans of type address (i.e. address2 and address3)
+    public Address Address3(){
+        return new Address("Newgard Street", "Chicago");
+    }
+
 }
 

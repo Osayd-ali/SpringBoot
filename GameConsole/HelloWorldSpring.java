@@ -2,6 +2,8 @@ package GameConsole;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import java.util.Arrays;
+
 public class HelloWorldSpring {
     public static void main(String[] args){
         //1: Launch a spring context
@@ -17,5 +19,7 @@ public class HelloWorldSpring {
         System.out.println(context.getBean("address2"));
         System.out.println(context.getBean("person3Parameters"));
         System.out.println(context.getBean(Address.class));
+        // How to list all the spring or pojo beans that we created
+        Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
     }
 }
