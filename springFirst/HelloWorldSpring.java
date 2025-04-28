@@ -1,4 +1,4 @@
-package GameConsole;
+package springFirst;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
