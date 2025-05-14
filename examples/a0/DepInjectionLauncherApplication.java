@@ -10,9 +10,10 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan
+@ComponentScan("GameConsole")
 public class DepInjectionLauncherApplication {
     public static void main(String[] args){
         var context = new AnnotationConfigApplicationContext(DepInjectionLauncherApplication.class);
+        context.getBean(GameRunner.class).run();
     }
 }
