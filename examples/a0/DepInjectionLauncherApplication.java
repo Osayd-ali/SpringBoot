@@ -9,11 +9,14 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
+import java.util.Arrays;
+
 @Configuration
-@ComponentScan("GameConsole")
+@ComponentScan
 public class DepInjectionLauncherApplication {
     public static void main(String[] args){
-        var context = new AnnotationConfigApplicationContext(DepInjectionLauncherApplication.class);
-        context.getBean(GameRunner.class).run();
+        try(var context = new AnnotationConfigApplicationContext(DepInjectionLauncherApplication.class)) {
+            Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
+        }
     }
 }
