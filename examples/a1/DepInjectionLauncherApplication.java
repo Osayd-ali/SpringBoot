@@ -11,11 +11,21 @@ import java.util.Arrays;
 
 @Component
 class YourBusinessClass{
-    @Autowired
     Dependency1 dependency1; // Here we are using field injection. Spring will inject the object of this class into the YourBusinessClass class using reflection.
 
-    @Autowired
     Dependency2 dependency2; // Here we are using field injection. Spring will inject the object of this class into the YourBusinessClass class using reflection.
+
+    @Autowired
+    public void setDependency1(Dependency1 dependency1) {
+        System.out.println("Setter Injection - setDependency1");
+        this.dependency1 = dependency1;
+    }
+
+    @Autowired
+    public void setDependency2(Dependency2 dependency2) {
+        System.out.println("Setter Injection - setDependency2");
+        this.dependency2 = dependency2;
+    }
 
     public String toString(){
         return "Using " + dependency1 + " and " + dependency2;
