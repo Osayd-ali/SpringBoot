@@ -9,7 +9,8 @@ import org.springframework.stereotype.Component;
 @Configuration
 public class BusinesslauncherContext {
     public static void main(String[] args){
-        var context = new AnnotationConfigApplicationContext(BusinesslauncherContext.class);
-        System.out.println(context.getBean(BusinessCalculationService.class).findMax());
+        try (var context = new AnnotationConfigApplicationContext(BusinesslauncherContext.class)) {
+            System.out.println(context.getBean(BusinessCalculationService.class).findMax());
+        }
     }
 }
