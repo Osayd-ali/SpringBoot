@@ -17,7 +17,7 @@ class NormalClass {
 }
 @Scope(value= ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 @Component
-class PrototypeClass { //Everytime this bean is requested, a new instance is created.
+class PrototypeClass { //Everytime this bean is requested, a new instance of the bean is created.
     public PrototypeClass() { // By default, the scope of a bean is singleton.
         System.out.println("PrototypeClass Constructor");
     }
