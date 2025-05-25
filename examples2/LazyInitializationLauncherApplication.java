@@ -15,12 +15,17 @@ class ClassA {
 }
 @Component
 @Lazy
-class ClassB{
+class ClassB {
     private ClassA classA;
+
     public ClassB(ClassA classA) {
         //Logic
         System.out.println("Some Initialization logic");
         this.classA = classA;
+    }
+
+    public void doSomething() {
+        System.out.println("Doing something");
     }
 }
 
@@ -29,7 +34,9 @@ class ClassB{
 public class LazyInitializationLauncherApplication {
     public static void main(String[] args){
         try ( var context = new AnnotationConfigApplicationContext(LazyInitializationLauncherApplication.class)){
-            context.getBean(ClassB.class);
+            System.out.println("Initialization of context is completed");
+            context.getBean(ClassB.class).doSomething();
+
         }
     }
 }
