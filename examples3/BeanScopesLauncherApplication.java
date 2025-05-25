@@ -28,6 +28,7 @@ public class BeanScopesLauncherApplication {
     public static void main(String[] args){
         try(var context = new AnnotationConfigApplicationContext(BeanScopesLauncherApplication.class)){
             Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
+            // Printing the beans and checking the scope of the beans.
             System.out.println(context.getBean(NormalClass.class));
             System.out.println(context.getBean(NormalClass.class));
             System.out.println(context.getBean(NormalClass.class));
