@@ -2,6 +2,7 @@
 package example4;
 
 import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -23,6 +24,13 @@ class SomeClass {
     @PostConstruct
     public void initialize(){
         someDependency.getReady();
+    }
+    //You might also want to do something before the application is terminated or before a bean is removed from your context.
+    // @PreDestroy, we can use this annotation to run the method before the bean is removed from the context.
+    //Typically used for cleaning up resources. if you have any database connections or file streams, you can close them here.
+    @PreDestroy
+    public void cleanUp(){
+        System.out.println("Cleaning up resources");
     }
 }
 
