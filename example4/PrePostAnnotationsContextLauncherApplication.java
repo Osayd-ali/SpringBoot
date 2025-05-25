@@ -14,6 +14,7 @@ class SomeClass {
     public SomeClass (SomeDependency someDependency) {
         System.out.println("Constructor Injection");
         this.someDependency = someDependency;
+        System.out.println("All dependencies are ready");
     }
 }
 
