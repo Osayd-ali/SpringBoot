@@ -32,7 +32,6 @@ public class BeanScopesLauncherApplication {
             System.out.println(context.getBean(NormalClass.class));
             System.out.println(context.getBean(NormalClass.class));
             System.out.println(context.getBean(NormalClass.class));
-
             System.out.println(context.getBean(PrototypeClass.class));
             System.out.println(context.getBean(PrototypeClass.class));
             System.out.println(context.getBean(PrototypeClass.class));
