@@ -12,7 +12,7 @@ import java.util.Arrays;
 @Component
 class NormalClass {
     public NormalClass() { //Everytime this bean is requested, the same instance is returned.
-        System.out.println("NormalClass Constructor");
+        System.out.println("NormalClass Constructor:");
     }
 }
 @Scope(value= ConfigurableBeanFactory.SCOPE_PROTOTYPE)
