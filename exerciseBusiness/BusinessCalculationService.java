@@ -1,10 +1,12 @@
 package exerciseBusiness;
 
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 
-@Component
+//@Component
+@Service // Spring stereotype annotation for service layer
 public class BusinessCalculationService {
     private DataService dataService;
     // Constructor Injection
