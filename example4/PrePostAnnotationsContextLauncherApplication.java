@@ -30,7 +30,7 @@ class SomeClass {
     //Typically used for cleaning up resources. if you have any database connections or file streams, you can close them here.
     @PreDestroy
     public void cleanUp(){
-        System.out.println("Cleaning up resources");
+        System.out.println("Cleaning up resources:");
     }
 }
 
