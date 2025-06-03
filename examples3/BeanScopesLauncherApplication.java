@@ -19,7 +19,7 @@ class NormalClass {
 @Component
 class PrototypeClass { //Everytime this bean is requested, a new instance of the bean is created.
     public PrototypeClass() { // By default, the scope of a bean is singleton.
-        System.out.println("PrototypeClass Constructor");
+        System.out.println("PrototypeClass Constructor:");
     }
 }
 @Configuration
